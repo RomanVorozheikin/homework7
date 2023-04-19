@@ -2,13 +2,14 @@ package ru.roman;
 
 public class Main {
     public static void main(String[] args) {
-        int population=12_000_000;
-        int birthRate=17*(population/1000);
-        int mortality=8*(population/1000);
-        int i;
-        for (i=0;i<=10;i++){
-            population=population+birthRate-mortality;
-            System.out.println("Год "+i+", численность населения составляет "+population);
-        }
+        int salary=15_000;
+        int total=salary;
+        int month=1;
+        do {
+            System.out.println("Месяц "+month+" сумма накоплений "+total);
+            month=month+1;
+            total=total+salary;
+            total=total+(total/100)*7;
+        }while (total<=12_000_000);
     }
 }
