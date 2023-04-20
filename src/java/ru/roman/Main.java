@@ -2,17 +2,18 @@ package ru.roman;
 
 public class Main {
     public static void main(String[] args) {
-        int salary=15_000;
-        int total=salary;
-        int month=1;
-        do {
-            if(month%6==0) {
-                System.out.println("Месяц " + month + " сумма накоплений " + total);
-            }
-            month=month+1;
-            total=total+salary;
-            total=total+(total/100)*7;
+        int salary = 15_000;
+        int total = 0;
+        int year = 9;
+        int month = year * 12;
+        int i=1;
+        for (; i <= month; i++) {
 
-        }while (total<=12_000_000);
+            total = total + salary;
+            total = total + (total / 100) * 7;
+            if (i % 6 == 0) {
+                System.out.println("Месяц " + i + " накопленная сумма " + total);
+            }
+        }
     }
 }
